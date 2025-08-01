@@ -1,9 +1,11 @@
 import { parseCsvToObjects } from "@/utils/csvParser";
+import { showNotification } from "@/utils/showNotification";
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
 export const useFileStore = defineStore("file", () => {
   const currentFileContent = ref("");
+  const selectedExperiment = ref();
 
   const formattedCsv = computed(() => {
     return parseCsvToObjects(currentFileContent.value);
@@ -17,9 +19,19 @@ export const useFileStore = defineStore("file", () => {
     reader.onload = (e) => {
       const content = e.target?.result as string;
 
+      if (!content.trim().length) {
+        showNotification("error", "No data found!");
+        return;
+      }
+
       currentFileContent.value = content;
     };
   };
 
-  return { currentFileContent, formattedCsv, setFileContent };
+  return {
+    currentFileContent,
+    selectedExperiment,
+    formattedCsv,
+    setFileContent,
+  };
 });

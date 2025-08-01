@@ -4,7 +4,9 @@ export const parseCsvToObjects = (csvText: string) => {
     .split(/\r?\n/)
     .filter((line) => line.trim() !== "" && !/^;+$/g.test(line.trim()));
 
-  if (lines.length < 2) return [];
+  if (lines.length < 2) {
+    return [];
+  }
 
   const headers = lines[0].split(";").map((h) => h.trim());
 
