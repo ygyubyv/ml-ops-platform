@@ -1,15 +1,9 @@
-import { parseCsvToObjects } from "@/utils/csvParser";
-import { showNotification } from "@/utils/showNotification";
+import { ref } from "vue";
 import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { showNotification } from "@/utils/showNotification";
 
 export const useFileStore = defineStore("file", () => {
   const currentFileContent = ref("");
-  const selectedExperiment = ref();
-
-  const formattedCsv = computed(() => {
-    return parseCsvToObjects(currentFileContent.value);
-  });
 
   const setFileContent = (file: File) => {
     const reader = new FileReader();
@@ -30,8 +24,6 @@ export const useFileStore = defineStore("file", () => {
 
   return {
     currentFileContent,
-    selectedExperiment,
-    formattedCsv,
     setFileContent,
   };
 });

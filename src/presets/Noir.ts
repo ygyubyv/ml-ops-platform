@@ -46,6 +46,24 @@ const Noir = definePreset(Aura, {
         },
       },
     },
+    chart: {
+      text: {
+        light: "#1f2937",
+        dark: "#f9fafb",
+      },
+      muted: {
+        light: "#6b7280",
+        dark: "#9ca3af",
+      },
+      grid: {
+        light: "#e5e7eb",
+        dark: "#4b5563",
+      },
+      tooltipBg: {
+        light: "#ffffff",
+        dark: "#111827",
+      },
+    },
   },
 });
 
