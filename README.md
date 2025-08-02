@@ -1,33 +1,38 @@
-# .
+# ML OPS PLATFORM
 
-This template should help get you started developing with Vue 3 in Vite.
+> A simple frontend application for uploading, inspecting, and visualizing machine learning experiment logs from CSV files.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+> [Live Demo](https://proud-pond-023937010.1.azurestaticapps.net/)
 
-## Type Support for `.vue` Imports in TS
+## Overview
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+**ML OPS PLATFORM** allows users to upload CSV files containing logged metrics from ML training experiments, view a list of experiments, select one or multiple for comparison, and visualize tracked metrics (e.g., loss, accuracy) over training steps using interactive line charts.
 
-## Customize configuration
+### Key Features:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Upload CSV files directly from user’s machine;
+- Display unique experiments extracted from the file;
+- Multi-select experiments for side-by-side visualization;
+- Render line charts for each tracked metric;
+- Light and dark theme support with toggle;
+- Responsive UI built with Tailwind CSS and PrimeVue.
 
-## Project Setup
+---
 
-```sh
-npm install
-```
+## Technologies Used
 
-### Compile and Hot-Reload for Development
+### Frontend
 
-```sh
-npm run dev
-```
+- **Vue 3 (Composition API)**
+- **TypeScript**
+- **Tailwind CSS**
+- **PrimeVue**
 
-### Type-Check, Compile and Minify for Production
+---
 
-```sh
-npm run build
-```
+## Infrastructure
+
+- Hosted on Azure Static Web Apps
+- CI/CD via GitHub Actions
