@@ -54,9 +54,6 @@
           />
         </template>
       </Column>
-      <Column field="metric_name" header="Metric Name" sortable filter></Column>
-      <Column field="step" header="Step" sortable filter></Column>
-      <Column field="value" header="Value" sortable filter></Column>
     </DataTable>
   </section>
 </template>

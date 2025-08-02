@@ -3,9 +3,11 @@
     <div
       v-for="(pointsByExperiment, metricName) in groupedByMetric"
       :key="metricName"
-      class="mb-8"
+      class="mb-8 p-6 rounded-2xl border border-surface-100"
     >
-      <h3 class="text-xl font-bold mb-4">{{ formatMetric(metricName) }}</h3>
+      <h3 class="text-xl font-bold mb-4">
+        {{ formatMetric(metricName) }}
+      </h3>
       <Chart
         type="line"
         :data="getChartData(pointsByExperiment)"
